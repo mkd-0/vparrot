@@ -21,69 +21,38 @@
       
         <!-- Title -->
       <div class="row d-flex row text-center mb-5">
-        <h2>Nos services</h2> 
-      </div>
+   
 
       <!-- Cards -->
       
+      {% for car in cars %}
+     
+        <!-- voiture -->
+                <div class="col-3 card mx-2 mb-5">
+                    <img src="{{ asset('uploads/' ~ car.imageName) }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text text-uppercase "> {{car.brand}}</p>
+                        <p class="card-text">{{car.model}}</p>
+                        <p class="card-text">Année :  {{car.year}}</p>
+                        <p class="card-text">Kilométrage :  {{car.mileage}}</p>
+                        <p class="card-text fw-bold">Prix :  {{car.price}} €</p>
+                        <a href="{{ path('app_detail_occasion_show', {'id': car.id}) }}" class="btn btn-primary d-flex justify-content-center">Détail</a>
+                    </div>
+                </div>
+                
+      {% endfor %}
+
+
+
+
     <div class="container-sm ">  
         <div class="row ">
             <div class="col-sm col-md-6 col-lg-4">
-                <!-- voiture 1 -->
-                <div class="card mx-2 mb-5">
-                    <img src="{{ asset('asset/voiture1.jpg') }}"  class="card-img-top" alt="Voiture d'occasion">
-                    <div class="card-body">
-                        <h5 class="card-title">Peaugeot 208</h5>
-                        <p class="card-text text-uppercase">essence</p>
-                        <p class="card-text">ANNEE : 2020</p>
-                        <p class="card-text">42800 km</p>
-                        <p class="card-text fw-bold">25000€</p>
-                        <a href="#" class="btn btn-primary d-flex justify-content-center">Détail</a>
-                    </div>
-                </div>
+                
             </div>
-            <div class="col-sm col-md-6 col-lg-4">
-                <!-- voiture 2 -->
-                <div class="card mx-2 mb-5">
-                    <img src="{{ asset('asset/voiture1.jpg') }}"  class="card-img-top" alt="Voiture d'occasion">
-                    <div class="card-body">
-                        <h5 class="card-title">Peaugeot 208</h5>
-                        <p class="card-text text-uppercase">essence</p>
-                        <p class="card-text">ANNEE : 2020</p>
-                        <p class="card-text">42800 km</p>
-                        <p class="card-text fw-bold">25000€</p>
-                        <a href="#" class="btn btn-primary d-flex justify-content-center">Détail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-6 col-lg-4">
-                <!-- voiture 3 -->
-                <div class="card mx-2 mb-5">
-                    <img src="{{ asset('asset/voiture1.jpg') }}"  class="card-img-top" alt="Voiture d'occasion">
-                    <div class="card-body">
-                        <h5 class="card-title">Peaugeot 208</h5>
-                        <p class="card-text text-uppercase">essence</p>
-                        <p class="card-text">ANNEE : 2020</p>
-                        <p class="card-text">42800 km</p>
-                        <p class="card-text fw-bold">25000€</p>
-                        <a href="#" class="btn btn-primary d-flex justify-content-center">Détail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm col-md-6 col-lg-4">
-                <!-- voiture 4 -->
-                <div class="card mx-2 mb-5">
-                    <img src="{{ asset('asset/voiture1.jpg') }}"  class="card-img-top" alt="Voiture d'occasion">
-                    <div class="card-body">
-                        <h5 class="card-title">Peaugeot 208</h5>
-                        <p class="card-text text-uppercase">essence</p>
-                        <p class="card-text">ANNEE : 2020</p>
-                        <p class="card-text">42800 km</p>
-                        <p class="card-text fw-bold">25000€</p>
-                        <a href="#" class="btn btn-primary d-flex justify-content-center">Détail</a>
-                    </div>
-                </div>
-            </div>
+        
+            
       
         </div>  
     </div>
@@ -98,9 +67,5 @@
 
 
 </section>
-
-
-
-
         {% endblock %}    
   

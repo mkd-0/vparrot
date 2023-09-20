@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des horaires{% endblock %}
+
+{% block body %}
+    <h1>Liste des horaires</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+               <th>id</th>
+                <th>Jour</th>
+                <th>Heure de début</th>
+                <th>Heure de fin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for schedule in schedules %}
+            <tr>
+               <td>{{ schedule.id }}</td>
+                <td>{{ schedule.Day }}</td>
+                <td>{{ schedule.MorningTime }}</td>
+                <td>{{ schedule.Afternoon }}</td>
+                <td>
+                    <a href="{{ path('app_admin_schedule_index', {'id': schedule.id}) }}">Voir</a>
+                    <a href="{{ path('app_admin_schedule_edit', {'id': schedule.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune données</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_schedule_new') }}">Créer</a>
+{% endblock %}

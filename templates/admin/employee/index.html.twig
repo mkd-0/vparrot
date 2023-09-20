@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les des utilisateurs{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    {% include "_partials/_adminnav.html.twig" %}
+      <main class="col-9 border border-light bg-white p-2">
+        <h1>Utilisateurs</h1>
+</div>
+</div>
+
+
+<aside class="col-3 border border-light bg-white p-2">
+    
+    
+   {#% if is_granted('ROLE_MODERATE') %#}
+        <article class="card mb-3">
+            <div class="card-header">Véhicules
+            </div>
+            <div class="card-body">
+                <p><a href ="">Liste des véhicules</a></p
+                <p><a href ="">Ajouter un véhicule</a></p
+            </div>
+        </article>
+    {#% endif %#}
+
+ {#% if is_granted('ROLE_MODERATE') %#}
+        <article class="card mb-3">
+            <div class="card-header">Temoignages
+            </div>
+            <div class="card-body">
+                <p><a href ="">Liste des témoignages</a></p
+                
+            </div>
+        </article>
+    {#% endif %#}
+
+
+</aside>
+
+
+
+
+
+
+{% endblock %}

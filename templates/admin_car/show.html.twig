@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}voiture{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h1>Voiture : {{ car.brand }}</h1>
+    </div>
+    <div class="row p-2">
+        <table class="table">
+        <tbody>
+            <tr>
+                <th>Modèle</th>
+                <td>{{ car.model }}</td>
+            </tr>
+            <tr>
+                <th>Kilométrage</th>
+                <td>{{ car.mileage }} km</td>
+            </tr>
+            <tr>
+                <th>Puissance</th>
+                <td>{{ car.power }} CV</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ car.price }} €</td>
+            </tr>
+           
+            <tr>
+                <th>Date de misen en circulation</th>
+                <td>{{ car.dateCirculation ? car.dateCirculation|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Réference</th>
+                <td>{{ car.reference }}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+    </div>
+     <div class="row mb-3">
+            <div class="col">
+                <img src="{{ asset('/uploads/' ~ car.imageName) }}" alt="Image" class="img-thumbnail" style="width:400px; height:auto">
+            </div>
+      </div> 
+        <div class="d-grid gap-2 d-md-block">
+        
+        <a href="{{ path('app_admin_car_index') }}" class="btn btn-primary  btn-lg" role="button">Retour</a>
+        <a href="{{ path('app_admin_car_edit', {'id': car.id}) }}" class="btn btn-info  btn-lg" role="button">Modifier</a>
+          <div class="btn btn-danger btn" role="button">
+          {{ include('admin_car/_delete_form.html.twig') }}
+          </div>
+        
+        </div>
+     
+            
+            
+           
+                
+            </div> 
+{% endblock %}

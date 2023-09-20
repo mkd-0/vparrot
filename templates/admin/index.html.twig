@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    {% include "_partials/_adminnav.html.twig" %}
+      <main class="col-9 border border-light bg-white p-2">
+        <h1>Administration</h1>
+</div>
+</div>
+
+
+<aside class="col-3 border border-light bg-white p-2">
+    
+   {# This will be a comment #}
+    {% if is_granted('ROLE_MODERATOR') %}
+        <article class="card mb-3">
+            <div class="card-header">Utilisateurs
+            </div>
+            <div class="card-body">
+                <p><a href ="{{ path('app_user_index') }}">Liste des utilisateurs</a></p
+                <p><a href ="{{ path('app_user_new') }}">Ajouter un utilisateur</a></p
+            </div>
+        </article>
+    {% endif %}
+    
+    {#% if is_granted('ROLE_MODERATOR') %#}
+        <article class="card mb-3">
+            <div class="card-header">Horaires
+            </div>
+            <div class="card-body">
+                <p><a href ="{{ path('app_admin_schedule_index') }}">Liste des horaires</a></p
+                <p><a href ="{{ path('app_admin_schedule_new') }}">Ajouter un horaire</a></p
+            </div>
+        </article>
+    {#% endif %#}
+    
+   {#% if is_granted('ROLE_MODERATOR') %#}
+        <article class="card mb-3">
+            <div class="card-header">Véhicules
+            </div>
+            <div class="card-body">
+                <p><a href ="{{ path('app_admin_car_index') }}">Liste des véhicules</a></p
+                <p><a href ="{{ path('app_admin_car_new') }}">Ajouter un véhicule</a></p
+            </div>
+        </article>
+    {#% endif %#}
+
+ {#% if is_granted('ROLE_MODERATOR') %#}
+        <article class="card mb-3">
+            <div class="card-header">Temoignages
+            </div>
+            <div class="card-body">
+                <p><a href ="">Liste des témoignages</a></p
+                
+            </div>
+        </article>
+    {#% endif %#}
+
+
+</aside>
+
+
+
+
+
+
+
+{% endblock %}

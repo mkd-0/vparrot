@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modier un horaire{% endblock %}
+
+{% block body %}
+    <h1>Modier un horaire</h1>
+
+    {{ include('admin_schedule/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_admin_schedule_index') }}">Retour</a>
+
+    {{ include('admin_schedule/_delete_form.html.twig') }}
+{% endblock %}

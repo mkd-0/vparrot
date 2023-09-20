@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <h1>Client</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ customer.id }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ customer.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ customer.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ customer.email }}</td>
+            </tr>
+            <tr>
+                <th>Témoignage</th>
+                <td>{{ customer.isTestimony ? 'Yes' : 'No' }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_customer_index') }}">Revenir</a>
+
+    <a href="{{ path('app_admin_customer_edit', {'id': customer.id}) }}">Modifier</a>
+
+    {{ include('admin_customer/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un modèle{% endblock %}
+
+{% block body %}
+    <h1>Modifier un modèle</h1>
+
+    {{ include('admin_model/_form.html.twig', {'button_label': 'Modifer'}) }}
+
+    <a href="{{ path('app_admin_model_index') }}">Revenir</a>
+
+    {{ include('admin_model/_delete_form.html.twig') }}
+{% endblock %}

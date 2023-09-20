@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle couleur{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle couleur</h1>
+
+    {{ include('admin_color/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_color_index') }}">Retour</a>
+{% endblock %}

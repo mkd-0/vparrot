@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car index{% endblock %}
+
+{% block body %}
+    <h1>Car index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mileage</th>
+                <th>Power</th>
+                <th>Price</th>
+                <th>IsSold</th>
+                <th>DateCirculation</th>
+                <th>Reference</th>
+                <th>Img</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.id }}</td>
+                <td>{{ car.mileage }}</td>
+                <td>{{ car.power }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.isSold ? 'Yes' : 'No' }}</td>
+                <td>{{ car.dateCirculation ? car.dateCirculation|date('Y-m-d') : '' }}</td>
+                <td>{{ car.reference }}</td>
+                <td><img src="{{ asset('/public/uploads/' ~ car.imageName) }}" alt="Image"></td>
+                <td>
+                    <a href="{{ path('app_detail_occasion_show', {'id': car.id}) }}">show</a>
+                   
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+ 
+{% endblock %}

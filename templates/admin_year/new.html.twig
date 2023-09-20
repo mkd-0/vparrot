@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une année{% endblock %}
+
+{% block body %}
+    <h1>Créer une année</h1>
+
+    {{ include('admin_year/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_year_index') }}">Revenir</a>
+{% endblock %}

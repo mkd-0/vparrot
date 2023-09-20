@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une énergie{% endblock %}
+
+{% block body %}
+    <h1>Créer une énergie</h1>
+
+    {{ include('admin_energy/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_energy_index') }}">Revenir</a>
+{% endblock %}

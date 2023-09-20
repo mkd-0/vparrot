@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-3">Détail</h1>
+
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm">
+         <img src="{{ asset('asset/voiture1.jpg') }}" alt="
+         ~ image.name 
+          Description de l'image" class="img-fluid">
+    
+    </div>
+    <div class="col-sm">
+            <p>Marque : {{ car.brand }}</p>
+            <p>Modèle : {{ car.Model }}</p>
+            <p>CV : {{ car.power }}</p>
+            <p>Energie : {{ car.energy }}</p>
+            <p>Kilométrage : {{ car.mileage }}</p>
+            <p>Prix : {{ car.price }}</p>
+            <p>DateCirculation : {{ car.year }}</p>
+            <p>Référence : {{ car.reference }}</p>
+            <p>Prix : {{ car.price }}</p>
+    </div>
+    
+<a class="btn btn-dark my-3" href="{{ path('app_contact') }}" role="button">Nous contacter</a>
+   
+
+  </div>
+</div>
+
+   
+
+   
+{% endblock %}
